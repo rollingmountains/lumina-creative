@@ -306,4 +306,8 @@ img {
   .teams-section .team-items img {
     width: 400px;
   }
+
+  .contact .recaptcha {
+    width: 300px;
+  }
 }
