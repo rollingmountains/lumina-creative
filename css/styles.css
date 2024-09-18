@@ -1,0 +1,309 @@
+/* Base reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Properties */
+:root {
+  --primary-bg-color: bisque;
+  --dark-bg-color: #333;
+  --container-normal: 1100px;
+  --container-wide: 1400px;
+  --container-narrow: 900px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utility Classes */
+
+.primary-bg-color {
+  background: var(--primary-bg-color);
+  color: #333;
+}
+
+.dark-bg-color {
+  background: var(--dark-bg-color);
+  color: #fff;
+}
+
+.dark-bg-color .primary-bg-color {
+  padding: 0 0.3rem;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+/* Containers */
+
+.container {
+  max-width: var(--container-normal);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-lg {
+  max-width: var(--container-wide);
+}
+
+.container-sm {
+  max-width: var(--container-narrow);
+}
+
+/* Header Flex */
+.header {
+  margin: 1.5rem auto;
+}
+
+.header .header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .main-menu {
+  display: flex;
+  gap: 16px;
+}
+
+/* Header inner items */
+
+.header .logo {
+  width: 130px;
+}
+
+.header .main-menu a {
+  /* background-color: bisque; */
+  width: 100px;
+  padding: 0.5rem 1rem;
+}
+
+.header .main-menu a:hover {
+  background-color: var(--primary-bg-color);
+  font-weight: 600;
+}
+
+.current {
+  font-weight: 600;
+  background-color: var(--primary-bg-color);
+}
+
+/* Main Section */
+.main-section {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+/* Gallery Section */
+.gallery-flex {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gallery-items {
+  width: calc(33.333% - 10px);
+  border-radius: 10px;
+}
+
+.gallery-items img {
+  border-radius: 10px;
+}
+
+.gallery-items:hover {
+  opacity: 0.9;
+}
+
+/* Footer Section */
+.footer .footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  text-align: center;
+  border-top: 1px solid grey;
+  padding: 15px;
+}
+
+.footer img {
+  width: 120px;
+}
+
+.footer a i:hover {
+  color: black;
+}
+
+/* Services Section */
+.services-section {
+  padding: 3rem 0 4rem;
+}
+
+.services-section .services-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.services-section .services-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.services-section .services-items {
+  flex: 1;
+}
+
+.services-section .services-items h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.services-section .services-items p {
+  font-size: 1rem;
+}
+
+.teams-section {
+  padding: 3rem 0 4rem;
+}
+.teams-section .teams-heading {
+  text-align: center;
+  margin: 0px auto 30px;
+}
+
+.teams-section .teams-flex {
+  display: flex;
+  gap: 10px;
+}
+
+.teams-section .team-items img {
+  border-radius: 10px;
+}
+
+/* Contact */
+
+.contact {
+  margin: 50px auto;
+}
+.contact h2 {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
+}
+.contact p {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin: 2rem 0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border: 0;
+  border-bottom: 1px solid #333;
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.form-group textarea {
+  height: 200px;
+  resize: none;
+}
+
+.contact button {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  background: transparent;
+  border: 0.5px solid #333;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+.contact button:hover {
+  background: #333;
+  color: white;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .header .header-flex,
+  .footer .footer-flex,
+  .services-section .services-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .teams-section .teams-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .main-section {
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-items {
+    width: calc(50% - 20px);
+  }
+
+  .footer .footer-flex {
+    gap: 20px;
+    text-align: center;
+  }
+
+  .teams-section .team-items img {
+    width: 400px;
+  }
+}
